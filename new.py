@@ -100,6 +100,8 @@ vol_port = returns['Portfolio'].std() * np.sqrt(250)
 rf = 0.01
 sharpe_ratio = ((annualized_return - rf) / vol_port)
 print(sharpe_ratio)
+
+### If the analysis results in a negative Sharpe ratio, it either means the risk-free rate is greater than the portfolio's return, or the portfolio's return is expected to be negative. 
 # Create a downside return column with the negative returns only
 target = 0
 downside_returns = returns.loc[returns['Portfolio'] < target]
